@@ -100,12 +100,27 @@
     color:#5a6a99; font-weight:800; font-size:14px; }
   .soon span { font-size:22px; display:block; margin-bottom:6px; }
   .foot { margin-top:34px; color:#3d4a7d; font-weight:800; font-size:11.5px; text-align:center; line-height:1.9; }
+
+  /* solo test range (?test=1): same hub, every game vs AI */
+  .testlink { margin-top:16px; color:#2c3765; font-weight:800; font-size:11px; letter-spacing:.5px;
+    text-decoration:none; border:1.5px dashed #2c3765; border-radius:999px; padding:6px 14px; }
+  .testlink:active { color:#8fa3d9; border-color:#8fa3d9; }
+  .testbanner { display:none; margin-top:12px; font-weight:800; font-size:12px; color:#ffd84d;
+    border:1.5px dashed #8a6d1f; border-radius:999px; padding:7px 18px; text-align:center; }
+  body.test .testbanner { display:block; }
+  a.card { position:relative; }
+  body.test a.card::after { content:"VS AI"; position:absolute; top:9px; right:14px; z-index:2;
+    font-family:'Nunito',sans-serif; font-weight:800; font-size:9px; letter-spacing:1px;
+    color:#10142a; background:#ffd84d; border-radius:999px; padding:3px 9px;
+    box-shadow:0 2px 6px rgba(0,0,0,.35); }
+  body.test .testlink { color:#ffd84d; border-color:#8a6d1f; }
 </style>
 </head>
 <body>
   <div class="logo"><span class="flat">FLAT</span><span class="play">PLAY</span></div>
   <div class="tag">Two players. One screen. Face to face.</div>
   <div class="how">Lay the phone <b>flat on the table</b> between you &amp; pick your battle</div>
+  <div class="testbanner">🔧 SOLO TEST RANGE — every game plays you vs the AI</div>
 
   <div class="cards">
     <a class="card squeak" href="https://squeakstack-richards-projects-82456208.vercel.app">
@@ -158,6 +173,7 @@
   </div>
 
   <div class="foot">no accounts · no downloads · works offline-ish<br>made by Richard &amp; the kids</div>
+  <a class="testlink" id="testlink" href="?test=1">🔧 solo test range</a>
 
 <script>
   // 8-bit alien built from the same bitmap the game uses
@@ -173,6 +189,17 @@
       holder.appendChild(d);
     });
   });
+
+  // solo test range: same hub, but every game link carries ?ai=1
+  if (new URLSearchParams(location.search).get('test') === '1') {
+    document.body.classList.add('test');
+    document.querySelectorAll('a.card').forEach(a => {
+      const u = new URL(a.href); u.searchParams.set('ai', '1'); a.href = u.toString();
+    });
+    document.querySelector('.tag').textContent = 'One player. One screen. AI across the table.';
+    const t = document.getElementById('testlink');
+    t.textContent = '↩ back to two-player'; t.href = location.pathname;
+  }
 </script>
 </body>
 </html>
