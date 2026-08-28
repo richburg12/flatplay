@@ -6,7 +6,7 @@
 <title>FLATPLAY</title>
 <meta name="description" content="Two players. One screen. Face to face.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@700;800&family=Press+Start+2P&family=Caveat:wght@700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@700;800&family=Press+Start+2P&family=Caveat:wght@700&family=Patrick+Hand&family=Cinzel:wght@700&display=swap" rel="stylesheet">
 <style>
   * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
   html, body { min-height:100%; background:#10142a; font-family:'Nunito',sans-serif;
@@ -96,6 +96,27 @@
     font-size:17px; color:#e8a33c; transform:rotate(-12deg); animation:powpop 1.6s ease-in-out infinite; }
   @keyframes powpop { 0%,100% { transform:rotate(-12deg) scale(1); } 50% { transform:rotate(-6deg) scale(1.18); } }
 
+  /* Trebuchet: twilight siege */
+  .treb { background:linear-gradient(180deg, #2a1f3d 0%, #1a1430 55%, #0f0c20 100%); border:1px solid #4a3a2a; position:relative; }
+  .treb .card-inner { background:
+      radial-gradient(2px 2px at 82% 16%, rgba(255,238,200,.9), transparent 60%),
+      radial-gradient(1px 1px at 22% 22%, rgba(220,210,255,.6), transparent 55%),
+      radial-gradient(1px 1px at 64% 34%, rgba(220,210,255,.45), transparent 55%),
+      repeating-linear-gradient(90deg, transparent 0 18px, rgba(60,48,36,.55) 18px 30px),
+      linear-gradient(0deg, rgba(52,42,32,.85) 0 14px, transparent 14px); }
+  .treb .name { font-family:'Cinzel',serif; font-weight:700; font-size:24px; letter-spacing:3px; color:#e8c86a; }
+  .treb .desc { margin-top:6px; font-weight:800; font-size:13px; color:#a89ac6; max-width:17em; }
+  .treb .cta { display:inline-block; margin-top:14px; font-family:'Cinzel',serif; font-weight:700;
+    font-size:14px; color:#1a1430; background:#e8c86a; border-radius:6px; padding:9px 22px;
+    letter-spacing:1px; box-shadow:0 4px 0 #8a6d2a; }
+  .sling { position:absolute; right:18px; top:20px; width:64px; height:60px; }
+  .sling svg { width:100%; height:100%; }
+  .sling .rock { position:absolute; left:2px; top:2px; width:9px; height:9px; border-radius:50%;
+    background:#cfc4a8; animation:lob 2.6s ease-in-out infinite; }
+  @keyframes lob { 0%,100% { transform:translate(0,26px); opacity:0; }
+    12% { opacity:1; } 50% { transform:translate(34px,-8px); opacity:1; }
+    82% { transform:translate(56px,30px); opacity:1; } 90% { opacity:0; } }
+
   .soon { border-radius:26px; border:2.5px dashed #2c3765; padding:22px; text-align:center;
     color:#5a6a99; font-weight:800; font-size:14px; }
   .soon span { font-size:22px; display:block; margin-bottom:6px; }
@@ -164,6 +185,25 @@
             <g stroke="#d8242b" stroke-width="2.4" stroke-linecap="round" fill="none">
               <circle cx="56" cy="26" r="5"/><path d="M56 31 v11 M56 42 l-5 9 M56 42 l5 9 M56 34 l7 4 M56 34 l-9 -5 l-7 -6"/>
             </g>
+          </svg>
+        </div>
+      </div>
+    </a>
+
+    <a class="card treb" href="https://trebuchet-mu.vercel.app/?flatplay=1">
+      <div class="card-inner">
+        <div class="name">TREBUCHET</div>
+        <div class="desc">Take turns hurling boulders. Read the wind, earn your arsenal, topple their crown.</div>
+        <span class="cta">LAY SIEGE ›</span>
+        <div class="sling">
+          <div class="rock"></div>
+          <svg viewBox="0 0 64 60">
+            <g stroke="#8a6d2a" stroke-width="3" stroke-linecap="round" fill="none">
+              <path d="M8 52 L20 30 L32 52 Z"/>
+              <path d="M20 30 L4 8"/>
+              <path d="M20 30 L40 44 L48 40"/>
+            </g>
+            <rect x="2" y="52" width="60" height="5" rx="2" fill="#5a4632"/>
           </svg>
         </div>
       </div>
