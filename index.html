@@ -6,7 +6,7 @@
 <title>FLATPLAY</title>
 <meta name="description" content="Two players. One screen. Face to face.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@700;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@700;800&family=Press+Start+2P&family=Caveat:wght@700&family=Patrick+Hand&display=swap" rel="stylesheet">
 <style>
   * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
   html, body { min-height:100%; background:#10142a; font-family:'Nunito',sans-serif;
@@ -76,6 +76,26 @@
   @keyframes spin { to { transform:rotate(360deg); } }
   @keyframes pulse { 50% { transform:scale(0.82); } }
 
+  /* Scrawlbrawl: doodles on notebook paper */
+  .scrawl { background:#fbf8ee; border:1px solid #d8d2c0; position:relative; }
+  .scrawl .card-inner { background:
+      linear-gradient(rgba(120,170,220,.22) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(120,170,220,.22) 1px, transparent 1px),
+      linear-gradient(90deg, transparent 24px, rgba(230,120,120,.5) 24px, rgba(230,120,120,.5) 25.5px, transparent 25.5px);
+    background-size:22px 22px, 22px 22px, 100% 100%; }
+  .scrawl .name { font-family:'Caveat',cursive; font-weight:700; font-size:34px; line-height:1; }
+  .scrawl .name .s { color:#2447d8; } .scrawl .name .b2 { color:#d8242b; }
+  .scrawl .desc { margin-top:5px; font-family:'Patrick Hand',cursive; font-size:14.5px;
+    line-height:1.45; color:#6b6558; max-width:16.5em; }
+  .scrawl .cta { display:inline-block; margin-top:12px; font-family:'Patrick Hand',cursive;
+    font-size:16px; color:#fbf8ee; background:#2447d8; border-radius:4px 14px 5px 15px;
+    padding:8px 22px; box-shadow:2px 3px 0 #d8242b; transform:rotate(-1.2deg); }
+  .duel { position:absolute; right:16px; top:30px; width:74px; height:64px; }
+  .duel svg { width:100%; height:100%; }
+  .duel .pow { position:absolute; left:16px; top:-8px; font-family:'Caveat',cursive; font-weight:700;
+    font-size:17px; color:#e8a33c; transform:rotate(-12deg); animation:powpop 1.6s ease-in-out infinite; }
+  @keyframes powpop { 0%,100% { transform:rotate(-12deg) scale(1); } 50% { transform:rotate(-6deg) scale(1.18); } }
+
   .soon { border-radius:26px; border:2.5px dashed #2c3765; padding:22px; text-align:center;
     color:#5a6a99; font-weight:800; font-size:14px; }
   .soon span { font-size:22px; display:block; margin-bottom:6px; }
@@ -112,6 +132,25 @@
         <div class="desc">Twin-stick dodge duel. Lead your shots, break their cover, shatter their core.</div>
         <span class="cta">ENGAGE ›</span>
         <div class="mech"><div class="barrel"></div><div class="ring"></div><div class="core"></div></div>
+      </div>
+    </a>
+
+    <a class="card scrawl" href="https://scrawlbrawl.vercel.app">
+      <div class="card-inner">
+        <div class="name"><span class="s">Scrawl</span><span class="b2">Brawl</span></div>
+        <div class="desc">Drag doodle armies into lanes. Counter their push, spend your ink, smash their castle.</div>
+        <span class="cta">DRAW! &rsaquo;</span>
+        <div class="duel">
+          <span class="pow">POW!</span>
+          <svg viewBox="0 0 74 64">
+            <g stroke="#2447d8" stroke-width="2.4" stroke-linecap="round" fill="none">
+              <circle cx="18" cy="26" r="5"/><path d="M18 31 v11 M18 42 l-5 9 M18 42 l5 9 M18 34 l-7 4 M18 34 l9 -5 l7 -6"/>
+            </g>
+            <g stroke="#d8242b" stroke-width="2.4" stroke-linecap="round" fill="none">
+              <circle cx="56" cy="26" r="5"/><path d="M56 31 v11 M56 42 l-5 9 M56 42 l5 9 M56 34 l7 4 M56 34 l-9 -5 l-7 -6"/>
+            </g>
+          </svg>
+        </div>
       </div>
     </a>
 
