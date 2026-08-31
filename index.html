@@ -6,7 +6,7 @@
 <title>FLATPLAY</title>
 <meta name="description" content="Two players. One screen. Face to face.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@700;800&family=Press+Start+2P&family=Caveat:wght@700&family=Patrick+Hand&family=Cinzel:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@700;800&family=Press+Start+2P&family=Caveat:wght@700&family=Patrick+Hand&family=Cinzel:wght@700&family=Noto+Serif+JP:wght@700&display=swap" rel="stylesheet">
 <style>
   * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
   html, body { min-height:100%; background:#10142a; font-family:'Nunito',sans-serif;
@@ -96,6 +96,22 @@
     font-size:17px; color:#e8a33c; transform:rotate(-12deg); animation:powpop 1.6s ease-in-out infinite; }
   @keyframes powpop { 0%,100% { transform:rotate(-12deg) scale(1); } 50% { transform:rotate(-6deg) scale(1.18); } }
 
+  /* Flipstaff: ink & shoji */
+  .flip { background:#1a1214; border:1px solid #3a2c26; }
+  .flip .card-inner { background:
+      linear-gradient(rgba(58,44,38,.5) 1.5px, transparent 1.5px),
+      linear-gradient(90deg, rgba(58,44,38,.5) 1.5px, transparent 1.5px),
+      radial-gradient(ellipse at 50% 40%, #f3e9d6 0%, #e8dbc2 78%, #d9c9a8 100%);
+    background-size:52px 52px, 52px 52px, 100% 100%; }
+  .flip .name { font-family:'Noto Serif JP',serif; font-weight:700; font-size:26px; letter-spacing:2px; color:#241d18; }
+  .flip .name .crim { color:#b3232e; }
+  .flip .desc { margin-top:6px; font-weight:800; font-size:13px; color:#6b5c4a; max-width:16.5em; }
+  .flip .cta { display:inline-block; margin-top:14px; font-family:'Noto Serif JP',serif; font-weight:700;
+    font-size:14px; color:#f3e9d6; background:#241d18; border-radius:4px; padding:9px 20px;
+    letter-spacing:1px; box-shadow:2px 3px 0 #b3232e; }
+  .staves { position:absolute; right:14px; top:14px; width:72px; height:96px; }
+  .staves svg { width:100%; height:100%; }
+
   /* Trebuchet: twilight siege */
   .treb { background:linear-gradient(180deg, #2a1f3d 0%, #1a1430 55%, #0f0c20 100%); border:1px solid #4a3a2a; position:relative; }
   .treb .card-inner { background:
@@ -184,6 +200,28 @@
             </g>
             <g stroke="#d8242b" stroke-width="2.4" stroke-linecap="round" fill="none">
               <circle cx="56" cy="26" r="5"/><path d="M56 31 v11 M56 42 l-5 9 M56 42 l5 9 M56 34 l7 4 M56 34 l-9 -5 l-7 -6"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </a>
+
+    <a class="card flip" href="https://flipstaff-game.vercel.app">
+      <div class="card-inner">
+        <div class="name">FLIP<span class="crim">STAFF</span></div>
+        <div class="desc">Bo staff duel in a box. Flip gravity, fight on floor and ceiling, punish the overswing.</div>
+        <span class="cta">CROSS STAFFS ›</span>
+        <div class="staves">
+          <svg viewBox="0 0 72 96">
+            <g stroke="#241d18" stroke-width="3" stroke-linecap="round" fill="none">
+              <circle cx="24" cy="62" r="6"/>
+              <path d="M24 68 v13 M24 81 l-7 11 M24 81 l7 11 M24 72 l-9 5 M24 72 l10 -6"/>
+              <path d="M6 88 L46 56" stroke="#b3232e" stroke-width="3.5"/>
+            </g>
+            <g stroke="#241d18" stroke-width="3" stroke-linecap="round" fill="none" transform="rotate(180 48 24)">
+              <circle cx="48" cy="14" r="6"/>
+              <path d="M48 20 v13 M48 33 l-7 11 M48 33 l7 11 M48 24 l-9 5 M48 24 l10 -6"/>
+              <path d="M30 40 L70 8" stroke="#1e7a56" stroke-width="3.5"/>
             </g>
           </svg>
         </div>
